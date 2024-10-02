@@ -8,20 +8,25 @@ function shuffle(array) {
     return array;
 }
 
+let product
+
 fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
     .then((res) => res.json())
     .then((data) => {
         let htmlContent = '';
+
+        product = data
 
         const shuffledData = shuffle(data);
 
         shuffledData.forEach((item) => {
             let imagesHTML = '';
             let src = "";
-            
+
             item.images.forEach((im) => {
                 console.log(im.id);
                 src = im.id;
+                console.log(src)
                 return src;
             });
 
@@ -49,6 +54,65 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
         });
 
         homeProducts.innerHTML = htmlContent;
+        const infoModalOverlay = document.querySelector('.info-madal-overlay')
+        const infoModal = document.querySelector('.info-modal')
+        const itemTitle = document.querySelectorAll('.item-title')
+        const modalBody = document.querySelector('.info-modal-body')
+        const body = document.querySelector('body')
+
+        function infoModalVisible() {
+            infoModal.classList.add("active-modal")
+            infoModalOverlay.classList.add("active-overlay")
+            body.style.overflow = 'hidden'
+        }
+
+        function infoModalDisible() {
+            infoModal.classList.remove("active-modal")
+            infoModalOverlay.classList.remove("active-overlay")
+            body.style.overflow = 'auto'
+        }
+
+        infoModalOverlay.addEventListener('click', () => {
+            infoModalDisible()
+        })
+
+        itemTitle.forEach((el, i) => {
+            el.addEventListener('click', () => {
+                console.log(i)
+                infoModalVisible()
+                product.forEach((item, itemIndex) => {
+                    if (i == itemIndex) {
+                        let src = ''
+                        item.images.forEach((img) => {
+                            img = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${img.id}.jpg`
+                            src = img
+                            console.log(src)
+                            return src
+                        })
+                        console.log(item)
+                        modalBody.innerHTML = `
+                        <div class="item-detail">
+                        <img class="detail-img" src="${src}" alt="${item.title}">
+                          <div class="detail-text-wrapper">
+                            <h2 class="item-title">${item.title}</h2>
+                            <h3>${item.price} UZS</h3>
+                            <span>${item.location}</span>
+                            <p>
+                              ${item.description}
+                            </p>
+                            <span>Категорие: ${item.category}</span>
+                            <span>${item.created_at}</span>
+                            <div class="item-mes-btn-wrp">
+                            <a class="detail-message-btn" href="#">Написать</a>
+                            </div>
+                          </div>
+                        </div>
+                        `
+                    }
+                })
+            })
+        })
+
     })
     .catch((err) => {
         console.error('Ошибка загрузки данных:', err);
