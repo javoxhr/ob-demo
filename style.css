@@ -68,7 +68,7 @@ main {
 }
 
 .call-btn {
-    width: 150px;
+    width: 100%;
     padding: 10px;
     background: #3b8435;
     font-weight: 600;
@@ -152,7 +152,7 @@ main {
 }
 
 .check-btn {
-    width: 150px;
+    width: 100%;
     padding: 10px;
     border: none;
     background: #426cb6;
@@ -342,7 +342,18 @@ main {
     z-index: 10;
     background: #fff;
     border-radius: 10px;
+    padding: 5px 15px 15px;
     display: none;
+    animation: profil-modal-anim .3s forwards;
+}
+
+@keyframes profil-modal-anim {
+    from {
+      transform: translate(-50%, -60%);
+    }
+    to {
+      transform: translate(-50%, -50%);
+    }
 }
 
 .profil-modal-overlay {
@@ -388,4 +399,42 @@ main {
 
 .active-user-modal {
     display: block;
+}
+
+@keyframes profil-modal-anim {
+    from {
+      transform: translate(-50%, -60%);
+    }
+    to {
+      transform: translate(-50%, -50%);
+    }
+}
+
+.support-btn {
+    width: 100%;
+    padding: 8px 15px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    background: #426cb6;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.support-btn:active {
+    opacity: 0.9;
+}
+
+.support-btn img {
+    width: 25px;
+}
+
+.profil-modal-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
