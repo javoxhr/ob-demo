@@ -103,7 +103,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                             <span>Категорие: ${item.category}</span>
                             <span>${item.created_at}</span>
                             <div class="item-mes-btn-wrp">
-                            <a class="detail-message-btn" href="#">Написать</a>
+                            <a class="detail-message-btn" href="https://t.me/${item.username}">Написать</a>
                             </div>
                           </div>
                         </div>
