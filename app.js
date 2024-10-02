@@ -117,3 +117,11 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
     .catch((err) => {
         console.error('Ошибка загрузки данных:', err);
     });
+
+let tg = window.Telegram.WebApp
+
+tg.expand()
+
+let userName = document.querySelector('#tg-user-name')
+
+userName.textContent = `${tg.initDataUnsafe.user.first_name} ${tg.initDataUnsafe.user.last_name}`
