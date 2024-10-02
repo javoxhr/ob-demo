@@ -341,6 +341,7 @@ main {
     z-index: 10;
     background: #fff;
     border-radius: 10px;
+    display: none;
 }
 
 .profil-modal-overlay {
@@ -351,6 +352,7 @@ main {
     left: 0;
     background: rgba(0, 0, 0, 0.30);
     z-index: 9;
+    display: none;
 }
 
 .user-profil-ic {
@@ -381,4 +383,8 @@ main {
     align-items: center;
     gap: 5px;
     padding: 10px 0;
+}
+
+.active-user-modal {
+    display: block;
 }
