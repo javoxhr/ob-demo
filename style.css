@@ -472,13 +472,13 @@ main {
 }
 
 .my-product-img {
-    width: 180px;
+    width: 100%;
     height: 160px;
     object-fit: cover;
 }
 
 .my-product {
-    width: fit-content;
+    width: 100%;
     border: 2px solid #bcbcbc;
     padding: 8px;
     border-radius: 6px;
