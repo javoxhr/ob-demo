@@ -452,7 +452,8 @@ main {
 .my-products {
     width: 100%;
     max-width: 300px;
-    height: fit-content;
+    height: 500px;
+    overflow: auto;
     background: #fff;
     border-radius: 10px;
     position: fixed;
