@@ -128,7 +128,17 @@ let tgUserName = `${tg.initDataUnsafe.user.username}`
 const MyProducts = document.querySelector('.my-products')
 const userNme = document.querySelector('.txt')
 
-userNme.textContent = tgUserName
+// userNme.textContent = tgUserName
+
+fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
+.then((res)=> res.json())
+.then((data)=> {
+    data.forEach((el)=> {
+        if(tgUserName == el.username) {
+            userNme.textContent = "Мы это сделали"
+        }
+    })
+})
 
 const userModalBtn = document.querySelector('.user-profil')
 const userModalOverlay = document.querySelector('.profil-modal-overlay')
