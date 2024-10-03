@@ -144,7 +144,7 @@ fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
             <div class="my-product">
                <img class="my-product-img" src="${src}">
                <h2>${el.title}</h2>
-               <span>${el.price}</span>
+               <span>${el.price} UZS</span>
                <span>${el.location}</span>
                <button class="my-product-btn">Посмотреть</button>
             </div>
