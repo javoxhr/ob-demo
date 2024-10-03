@@ -463,7 +463,7 @@ main {
 }
 
 .profil-products {
-    height: 500px;
+    height: 485px;
     overflow: auto;
     padding-top: 40px;
     display: flex;
@@ -531,6 +531,7 @@ main {
     color: #fff;
     font-weight: 600;
     font-size: 15.5px;
+    margin-top: 10px;
 }
 
 .close-my-products-btn:active {
