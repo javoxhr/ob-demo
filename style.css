@@ -490,4 +490,11 @@ main {
 
 .my-products-title {
     text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    z-index: 3;
 }
