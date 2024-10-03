@@ -1,3 +1,8 @@
+let tg = window.Telegram.WebApp
+
+tg.expand()
+
+
 const homeProducts = document.querySelector('.homeproducts');
 
 function shuffle(array) {
@@ -118,6 +123,13 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
         console.error('Ошибка загрузки данных:', err);
     });
 
+let tgUserName = `${tg.initDataUnsafe.user.username}`
+
+const MyProducts = document.querySelector('.my-products')
+const userNme = document.querySelector('.txt')
+
+userNme.textContent = tgUserName
+
 const userModalBtn = document.querySelector('.user-profil')
 const userModalOverlay = document.querySelector('.profil-modal-overlay')
 const userModal = document.querySelector('.profil-modal')
@@ -127,16 +139,12 @@ function userRemoveModal() {
     userModalOverlay.classList.remove('active-user-modal')
 }
 
-userModalBtn.addEventListener('click', ()=> {
+userModalBtn.addEventListener('click', () => {
     userModal.classList.add('active-user-modal')
     userModalOverlay.classList.add('active-user-modal')
 })
 
-userModalOverlay.addEventListener('click', ()=> userRemoveModal())
-
-let tg = window.Telegram.WebApp
-
-tg.expand()
+userModalOverlay.addEventListener('click', () => userRemoveModal())
 
 let userName = document.querySelector('#tg-user-name')
 
