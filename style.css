@@ -464,6 +464,7 @@ main {
 }
 
 .my-product-img {
-    width: 100px;
-    height: 80px;
+    width: 180px;
+    height: 160px;
+    object-fit: cover;
 }
