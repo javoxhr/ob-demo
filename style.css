@@ -505,6 +505,7 @@ main {
     padding: 10px;
     background: #fff;
     z-index: 3;
+    border-radius: 10px 10px 0 0;
 }
 
 .my-product-btn {
@@ -515,4 +516,23 @@ main {
     border: none;
     font-weight: 600;
     font-size: 15.5px;
+}
+
+.my-product-btn:active {
+    opacity: 0.9;
+}
+
+.close-my-products-btn {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    background: #426cb6;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15.5px;
+}
+
+.close-my-products-btn:active {
+    opacity: 0.9;
 }
