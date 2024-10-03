@@ -469,10 +469,16 @@ main {
 }
 
 .my-product {
-    border: 2px solid;
+    width: fit-content;
+    border: 2px solid #bcbcbc;
     padding: 8px;
+    border-radius: 6px;
 }
 
 .my-products {
     padding: 10px;
+}
+
+.my-products-title {
+    text-align: center;
 }
