@@ -473,13 +473,18 @@ main {
     border: 2px solid #bcbcbc;
     padding: 8px;
     border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.my-product h2 {
+    font-weight: 600;
+    font-size: 17px;
 }
 
 .my-products {
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
 }
 
 .my-products-title {

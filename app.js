@@ -143,7 +143,7 @@ fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
             userProductsWrp.innerHTML += `
             <div class="my-product">
                <img class="my-product-img" src="${src}">
-               <h1>${el.title}</h1>
+               <h2>${el.title}</h2>
                <span>${el.price}</span>
                <span>${el.location}</span>
                <button>Посмотреть</button>
