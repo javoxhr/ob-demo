@@ -169,6 +169,25 @@ userModalBtn.addEventListener('click', () => {
 
 userModalOverlay.addEventListener('click', () => userRemoveModal())
 
+const myProductsBtn = document.querySelector('.my-products-btn')
+const myProducts = document.querySelector('.my-products')
+const myProductsOverlay = document.querySelector('.my-products-overlay')
+const closeMyProductsBtn = document.querySelector('.close-my-products-btn')
+
+myProductsBtn.addEventListener('click', ()=> {
+    myProducts.classList.add('active-my-products')
+    myProductsOverlay.classList.add('active-my-products')
+    userRemoveModal()
+})
+
+function closeMyProductsFunc() {
+    myProducts.classList.remove('active-my-products')
+    myProductsOverlay.classList.remove('active-my-products')
+}
+
+closeMyProductsBtn.addEventListener('click', ()=> closeMyProductsFunc())
+myProductsOverlay.addEventListener('click', ()=> closeMyProductsFunc())
+
 let userName = document.querySelector('#tg-user-name')
 
 userName.textContent = `${tg.initDataUnsafe.user.first_name} ${tg.initDataUnsafe.user.last_name}`

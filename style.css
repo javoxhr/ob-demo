@@ -420,7 +420,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 5px;
+    gap: 8px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -431,6 +431,7 @@ main {
 
 .support-btn img {
     width: 25px;
+    margin-top: -3px;
 }
 
 .profil-modal-btns {
@@ -447,6 +448,7 @@ main {
     left: 0;
     background: rgba(0, 0, 0, 0.30);
     z-index: 9;
+    display: none;
 }
 
 .my-products {
@@ -460,6 +462,16 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    animation: my-products-anim .3s forwards;
+}
+
+@keyframes my-products-anim {
+    from {
+      transform: translate(-50%, -60%);
+    }
+    to {
+      transform: translate(-50%, -50%);
+    }
 }
 
 .profil-products {
@@ -494,6 +506,7 @@ main {
 
 .my-products {
     padding: 10px;
+    display: none;
 }
 
 .my-products-title {
@@ -517,6 +530,7 @@ main {
     border: none;
     font-weight: 600;
     font-size: 15.5px;
+    cursor: pointer;
 }
 
 .my-product-btn:active {
@@ -533,8 +547,13 @@ main {
     font-weight: 600;
     font-size: 15.5px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .close-my-products-btn:active {
     opacity: 0.9;
+}
+
+.active-my-products {
+    display: block;
 }
