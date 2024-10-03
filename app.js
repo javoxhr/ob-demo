@@ -135,7 +135,11 @@ fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
 .then((data)=> {
     data.forEach((el)=> {
         if(tgUserName == el.username) {
-            userNme.textContent = "Мы это сделали"
+            userNme.innerHTML += `
+            <div class="my-product">
+             <h1>${el.title}</h1>
+            </div>
+            `
         }
     })
 })
