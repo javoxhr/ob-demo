@@ -467,3 +467,8 @@ main {
     height: 160px;
     object-fit: cover;
 }
+
+.my-product {
+    border: 2px solid;
+    padding: 8px;
+}
