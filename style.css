@@ -477,6 +477,9 @@ main {
 
 .my-products {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .my-products-title {
