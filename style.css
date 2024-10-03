@@ -466,6 +466,9 @@ main {
     height: 500px;
     overflow: auto;
     padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .my-product-img {
@@ -511,5 +514,5 @@ main {
     color: #fff;
     border: none;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 15.5px;
 }
