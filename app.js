@@ -146,7 +146,7 @@ fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
                <h2>${el.title}</h2>
                <span>${el.price}</span>
                <span>${el.location}</span>
-               <button>Посмотреть</button>
+               <button class="my-product-btn">Посмотреть</button>
             </div>
             `
         }

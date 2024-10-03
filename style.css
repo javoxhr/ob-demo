@@ -465,7 +465,7 @@ main {
 .profil-products {
     height: 500px;
     overflow: auto;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .my-product-img {
@@ -502,4 +502,14 @@ main {
     padding: 10px;
     background: #fff;
     z-index: 3;
+}
+
+.my-product-btn {
+    padding: 6px;
+    border-radius: 5px;
+    background: #426cb6;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    font-size: 17px;
 }
