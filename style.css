@@ -453,7 +453,6 @@ main {
     width: 100%;
     max-width: 300px;
     height: 500px;
-    overflow: auto;
     background: #fff;
     border-radius: 10px;
     position: fixed;
@@ -461,6 +460,11 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+}
+
+.profil-products {
+    height: 500px;
+    overflow: auto;
 }
 
 .my-product-img {
