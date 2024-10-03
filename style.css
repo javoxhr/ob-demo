@@ -465,7 +465,7 @@ main {
 .profil-products {
     height: 485px;
     overflow: auto;
-    padding-top: 40px;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 10px;
