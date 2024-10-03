@@ -462,3 +462,8 @@ main {
     transform: translate(-50%, -50%);
     z-index: 10;
 }
+
+.my-product-img {
+    width: 100px;
+    height: 80px;
+}
