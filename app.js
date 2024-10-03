@@ -134,8 +134,15 @@ fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
     let tgUserName = `${tg.initDataUnsafe.user.username}`
     data.forEach((el)=> {
         if(tgUserName == el.username) {
+            let src = ''
+            el.images.forEach((im)=> {
+                let img = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${im.id}.jpg`
+                src = img
+                return src
+            })
             userProductsWrp.innerHTML += `
             <div class="my-product">
+               <img src="${el.src}">
                <h1>${el.title}</h1>
                <span>${el.price}</span>
                <span>${el.location}</span>
