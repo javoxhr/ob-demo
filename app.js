@@ -123,21 +123,22 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
         console.error('Ошибка загрузки данных:', err);
     });
 
-let tgUserName = `${tg.initDataUnsafe.user.username}`
-
 const MyProducts = document.querySelector('.my-products')
-const userNme = document.querySelector('.txt')
+const userProductsWrp = document.querySelector('.profil-products')
 
 // userNme.textContent = tgUserName
 
 fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
 .then((res)=> res.json())
 .then((data)=> {
+    let tgUserName = `${tg.initDataUnsafe.user.username}`
     data.forEach((el)=> {
         if(tgUserName == el.username) {
-            userNme.innerHTML += `
+            userProductsWrp.innerHTML += `
             <div class="my-product">
-             <h1>${el.title}</h1>
+               <h1>${el.title}</h1>
+               <span>${el.price}</span>
+               <span>${el.location}</span>
             </div>
             `
         }
