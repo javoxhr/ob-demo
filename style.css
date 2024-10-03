@@ -465,6 +465,7 @@ main {
 .profil-products {
     height: 500px;
     overflow: auto;
+    padding-top: 20px;
 }
 
 .my-product-img {
