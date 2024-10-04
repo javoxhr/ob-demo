@@ -1,5 +1,5 @@
 :root {
-    --main-color: #6d6e7d;
+    --main-color: #4d4e57;
     --pane-padding: 5px 42px;
   }
 
@@ -290,7 +290,7 @@ main {
     width: 100%;
     padding: 9px;
     color: #fff;
-    background: var(--main-color);
+    background: #426cb6;
     text-align: center;
     border-radius: 5px;
     display: flex;
@@ -319,7 +319,7 @@ main {
     padding: 6px;
     border: none;
     color: #fff;
-    background: var(--main-color);
+    background: #426cb6;
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
