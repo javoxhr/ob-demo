@@ -1,3 +1,8 @@
+:root {
+    --main-color: #6d6e7d;
+    --pane-padding: 5px 42px;
+  }
+
 * {
     padding: 0;
     margin: 0;
@@ -124,7 +129,7 @@ main {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 32px;
     padding-bottom: 20px;
 }
 
@@ -285,7 +290,7 @@ main {
     width: 100%;
     padding: 9px;
     color: #fff;
-    background: #426cb6;
+    background: var(--main-color);
     text-align: center;
     border-radius: 5px;
     display: flex;
@@ -314,7 +319,7 @@ main {
     padding: 6px;
     border: none;
     color: #fff;
-    background: #426cb6;
+    background: var(--main-color);
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
@@ -516,7 +521,7 @@ main {
     left: 0;
     width: 100%;
     padding: 10px;
-    background: #426cb6;
+    background: var(--main-color);
     color: #fff;
     z-index: 3;
     border-radius: 10px 10px 0 0;
@@ -539,9 +544,9 @@ main {
 
 .close-my-products-btn {
     width: 100%;
-    padding: 6px;
+    padding: 9px;
     border: none;
-    background: #426cb6;
+    background: var(--main-color);
     border-radius: 5px;
     color: #fff;
     font-weight: 600;
