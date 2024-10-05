@@ -109,7 +109,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                               ${item.description}
                             </p>
                             <span>Категорие: ${item.category}</span>
-                            <span class="user-username"><h2>👤Имя пользователь: </h2><span class="detail-users-profil"> ${item.username ? item.username : 'Admin'}</span></span>
+                            <span class="user-username"><h2>Продавец: </h2><span class="detail-users-profil"> ${item.username ? item.username : 'Admin'}</span></span>
                             <div class="item-mes-btn-wrp">
                               <a class="detail-message-btn" href="https://t.me/${item.username}">Написать</a>
                               <a class="detail-message-btn" href="https://t.me/${item.username}">Позвонить</a>

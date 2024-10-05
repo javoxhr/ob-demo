@@ -15,7 +15,8 @@
 html {
     height: 100%;
     scroll-behavior: smooth;
-    background: #fff;
+    background: #000000;
+    color: #fff;
 }
 
 body {
@@ -61,9 +62,10 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    box-shadow: 1px 5px 10px 5px #dcdcdc;
+    box-shadow: 1px 5px 10px 5px #272727;
     position: relative;
     border-radius: 15px 15px 0 0;
+    /* #dcdcdc */
 }
 
 .time {
@@ -406,7 +408,7 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    background: #fff;
+    background: #272727;
     border-radius: 10px;
     padding: 5px 15px 15px;
     display: none;
@@ -521,7 +523,7 @@ main {
     width: 100%;
     max-width: 300px;
     height: 550px;
-    background: #fff;
+    background: #272727;
     border-radius: 10px;
     position: fixed;
     top: 50%;
