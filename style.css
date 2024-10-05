@@ -249,14 +249,29 @@ main {
 .lets-to-profil {
     color: #fff;
     background: var(--main-color);
-    padding: 8px 0;
+    padding: 10px 0;
     border: none;
     border-radius: 5px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .lets-to-profil:active {
     opacity: 0.9;
+}
+
+.item-mes-btn-wrp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-mes-btn-wrp a {
+    font-weight: 600;
+}
+
+.item-mes-btn-wrp a:last-child {
+    background: #3b8435 !important;
 }
 
 @media screen and (max-width: 600px) {
