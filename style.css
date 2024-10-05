@@ -253,6 +253,7 @@ main {
     border: none;
     border-radius: 5px;
     font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
 }
 
