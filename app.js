@@ -40,7 +40,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                     <img class="item-img" src="https://raw.githubusercontent.com/javoxhr/data/main/images/image_${src ? src : 'AgACAgIAAxkBAAIGqWby6Q9W77bO3lOddm5fuXxYNSJyAAI16DEbLqqRSxPGZp2mWjhMAQADAgADeQADNgQ'}.jpg" alt="Image for ${item.title}">
                     <div class="item-text-wrapper">
                         <h2 class="item-title">${item.title}</h2>
-                        <span>${item.price} UZS</span>
+                        <span class="item-price">${item.price} UZS</span>
                         <span class="item-location">${item.location ? item.location : 'Локация не указана'}</span>
                         <span class="time">${item.created_at}</span>
                         <div class="images">${imagesHTML}</div>
@@ -102,10 +102,13 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                             <h2 class="item-title">${item.title}</h2>
                             <h3>${item.price} UZS</h3>
                             <span>${item.location}</span>
+                            <h3 class="detail-desc">Описание: </h3>
                             <p>
                               ${item.description}
                             </p>
                             <span>Категорие: ${item.category}</span>
+                            <span class="user-username"><h2>👤Имя пользователь: </h2> ${item.username ? item.username : 'Admin'}</span>
+                            <button class="lets-to-profil">Перейти к профил</button>
                             <span>${item.created_at}</span>
                             <div class="item-mes-btn-wrp">
                             <a class="detail-message-btn" href="https://t.me/${item.username}">Написать</a>
@@ -129,18 +132,18 @@ const userProductsWrp = document.querySelector('.profil-products')
 // userNme.textContent = tgUserName
 
 fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
-.then((res)=> res.json())
-.then((data)=> {
-    let tgUserName = `${tg.initDataUnsafe.user.username}`
-    data.forEach((el)=> {
-        if(tgUserName == el.username) {
-            let src = ''
-            el.images.forEach((im)=> {
-                let img = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${im.id}.jpg`
-                src = img
-                return src
-            })
-            userProductsWrp.innerHTML += `
+    .then((res) => res.json())
+    .then((data) => {
+        let tgUserName = `${tg.initDataUnsafe.user.username}`
+        data.forEach((el) => {
+            if (tgUserName == el.username) {
+                let src = ''
+                el.images.forEach((im) => {
+                    let img = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${im.id}.jpg`
+                    src = img
+                    return src
+                })
+                userProductsWrp.innerHTML += `
             <div class="my-product">
                <img class="my-product-img" src="${src}">
                <h2>${el.title}</h2>
@@ -149,9 +152,9 @@ fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
                <button class="my-product-btn">Посмотреть</button>
             </div>
             `
-        }
+            }
+        })
     })
-})
 
 const userModalBtn = document.querySelector('.user-profil')
 const userModalOverlay = document.querySelector('.profil-modal-overlay')
@@ -174,7 +177,7 @@ const myProducts = document.querySelector('.my-products')
 const myProductsOverlay = document.querySelector('.my-products-overlay')
 const closeMyProductsBtn = document.querySelector('.close-my-products-btn')
 
-myProductsBtn.addEventListener('click', ()=> {
+myProductsBtn.addEventListener('click', () => {
     myProducts.classList.add('active-my-products')
     myProductsOverlay.classList.add('active-my-products')
     userRemoveModal()
@@ -185,8 +188,8 @@ function closeMyProductsFunc() {
     myProductsOverlay.classList.remove('active-my-products')
 }
 
-closeMyProductsBtn.addEventListener('click', ()=> closeMyProductsFunc())
-myProductsOverlay.addEventListener('click', ()=> closeMyProductsFunc())
+closeMyProductsBtn.addEventListener('click', () => closeMyProductsFunc())
+myProductsOverlay.addEventListener('click', () => closeMyProductsFunc())
 
 let userName = document.querySelector('#tg-user-name')
 
