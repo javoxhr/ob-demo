@@ -95,7 +95,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                             console.log(src)
                             return src
                         })
-                        getForIfUserName = item.username
+                        getForIfUserName = item.username ? item.username : "Anonim 🚫"
                         console.log(item)
                         modalBody.innerHTML = `
                         <div class="item-detail">
@@ -119,19 +119,49 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                         </div>
                         `
                         const profiltBtn = document.querySelector('.lets-to-profil')
+                        const usersInfoWrapper = document.querySelector('.users-profil-info')
+                        const usersInfoOverlay = document.querySelector('.users-profil-overlay')
+                        const usersInfoModal = document.querySelector('.users-profil')
+
+                        usersInfoOverlay.addEventListener('click', ()=> {
+                            usersInfoOverlay.style.display = "none"
+                            usersInfoModal.style.display = "none"
+                        })
 
                         profiltBtn.addEventListener('click', ()=> {
+                            infoModalDisible()
+                            usersInfoOverlay.style.display = "block"
+                            usersInfoModal.style.display = "block"
                             fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
                             .then((res)=> res.json())
                             .then((data)=> {
+                                usersInfoWrapper.innerHTML = ""
                                 data.forEach((el)=> {
+                                    let src
+                                    el.images.forEach((img)=> {
+                                        let image = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${img.id}.jpg`
+                                        src = image
+                                        return src
+                                    })
                                     if(el.username == getForIfUserName) {
                                         console.log(el)
+                                        usersInfoWrapper.innerHTML += `
+                                        <div class="my-product">
+                                        <img class="my-product-img" src="${src}">
+                                        <h2>${el.title}</h2>
+                                        <span>${el.price}</span>
+                                        <span>${el.location}</span>
+                                        <button class="my-product-btn">Посмотреть</button>
+                                        </div>
+                                        `
                                     }
                                 })
                             })
                             console.log(getForIfUserName)
                             console.log(item.username)
+
+                            const usersName = document.querySelector('#user-id')
+                            usersName.textContent = getForIfUserName
                         })
                     }
                 })
