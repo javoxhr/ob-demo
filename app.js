@@ -85,6 +85,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
             el.addEventListener('click', () => {
                 console.log(i)
                 infoModalVisible()
+                let getForIfUserName = ""
                 product.forEach((item, itemIndex) => {
                     if (i == itemIndex) {
                         let src = ''
@@ -94,6 +95,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                             console.log(src)
                             return src
                         })
+                        getForIfUserName = item.username
                         console.log(item)
                         modalBody.innerHTML = `
                         <div class="item-detail">
@@ -107,7 +109,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                               ${item.description}
                             </p>
                             <span>Категорие: ${item.category}</span>
-                            <span class="user-username"><h2>👤Имя пользователь: </h2> ${item.username ? item.username : 'Admin'}</span>
+                            <span class="user-username"><h2>👤Имя пользователь: </h2><span class="detail-users-profil"> ${item.username ? item.username : 'Admin'}</span></span>
                             <button class="lets-to-profil">Перейти к профил</button>
                             <span>${item.created_at}</span>
                             <div class="item-mes-btn-wrp">
@@ -116,6 +118,21 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                           </div>
                         </div>
                         `
+                        const profiltBtn = document.querySelector('.lets-to-profil')
+
+                        profiltBtn.addEventListener('click', ()=> {
+                            fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
+                            .then((res)=> res.json())
+                            .then((data)=> {
+                                data.forEach((el)=> {
+                                    if(el.username == getForIfUserName) {
+                                        console.log(el)
+                                    }
+                                })
+                            })
+                            console.log(getForIfUserName)
+                            console.log(item.username)
+                        })
                     }
                 })
             })

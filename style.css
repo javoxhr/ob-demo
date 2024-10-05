@@ -292,11 +292,21 @@ main {
 }
 
 .detail-text-wrapper p {
+    height: 100%;
+    max-height: 40px;
+    overflow: auto;
     width: 100%;
     font-size: 16px;
     font-weight: 600;
     color: #212121;
-    margin-top: -7px;
+    margin-top: -5px;
+}
+
+.detail-users-profil {
+    width: 55px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .detail-message-btn {
