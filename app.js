@@ -115,9 +115,15 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                               <a class="detail-message-btn" href="https://t.me/${item.username}">Позвонить</a>
                             </div>
                             <button class="lets-to-profil">Перейти к профил</button>
+                            <button id="detail-back">Назад</button>
                           </div>
                         </div>
                         `
+            
+                        const detailClose = document.querySelector('#detail-back')
+                        detailClose.addEventListener('click', ()=> {
+                            infoModalDisible()
+                        })
                         const profiltBtn = document.querySelector('.lets-to-profil')
                         const usersInfoWrapper = document.querySelector('.users-profil-info')
                         const usersInfoOverlay = document.querySelector('.users-profil-overlay')
