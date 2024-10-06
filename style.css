@@ -71,7 +71,7 @@ main {
     padding: 12px;
     border-radius: 8px;
     text-align: center;
-    margin-left: 8px;
+    margin-left: 13px;
 }
 
 .name-box-wrp {
@@ -686,10 +686,10 @@ main {
 }
 
 .users-profil-info {
-    padding: 10px 20px 0;
+    padding: 10px 10px 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 5px;
 }
 
 @media screen and (max-width: 700px) {
@@ -724,11 +724,12 @@ main {
     flex-direction: column;
     justify-content: center;
     padding: 10px 0;
+    gap: 10px;
 }
 
 .proifile-users-wrap span {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: var(--main-color);
     color: #fff;
