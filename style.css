@@ -387,8 +387,8 @@ main {
 }
 
 .user-profil {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 40%;
     display: flex;
     align-items: center;
@@ -404,7 +404,7 @@ main {
     cursor: pointer;
     position: absolute;
     left: 0;
-    top: 13.3px;
+    top: 11px;
 }
 
 .user-profil:active {
@@ -537,9 +537,7 @@ main {
 
 .my-products {
     width: 100%;
-    max-width: 300px;
-    height: fit-content;
-    max-height: 550;
+    height: 100%;
     background: #fff;
     border-radius: 10px;
     position: fixed;
