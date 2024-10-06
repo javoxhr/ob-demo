@@ -2,6 +2,17 @@ let tg = window.Telegram.WebApp
 
 tg.expand()
 
+const addGoodsBtn = document.querySelector('.product-public-btn')
+
+function sendDataToFunc(data) {
+    tg.sendData(data)
+}
+
+addGoodsBtn.addEventListener('click', ()=> {
+    console.log('hello world')
+    sendDataToFunc('Added products')
+})
+
 
 const homeProducts = document.querySelector('.homeproducts');
 const siteLoader = document.querySelector('.loader-wrapper')
@@ -46,7 +57,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                         <span class="time">${item.created_at}</span>
                         <div class="images">${imagesHTML}</div>
                         <div class="item-btns-wrp">
-                            <button class="check-btn">Посмотреть</button>
+                            <a href="https://t.me/${item.username}" class="check-btn">Написать</a>
                             <a href="#" class="call-btn">Позвонить</a>
                         </div>
                         <button class="like">

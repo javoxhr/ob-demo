@@ -189,6 +189,7 @@ main {
 .check-btn {
     width: 100%;
     padding: 10px;
+    text-align: center;
     border: none;
     background: var(--sub-pr-color);
     color: #fff;
@@ -367,10 +368,11 @@ main {
 
 .product-public-btn {
     width: 100%;
-    padding: 9px;
+    padding: 13px;
     color: #fff;
     background: var(--sub-pr-color);
     text-align: center;
+    font-size: 18px;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -417,7 +419,7 @@ main {
 }
 
 .profil-modal {
-    width: 300px;
+    width: 340px;
     height: fit-content;
     position: fixed;
     top: 50%;
@@ -452,8 +454,8 @@ main {
 }
 
 .user-profil-ic {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -655,8 +657,8 @@ main {
 }
 
 .item-price {
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 19px;
 }
 
 .users-profil-overlay {
