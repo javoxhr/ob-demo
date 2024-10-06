@@ -5,13 +5,15 @@ tg.expand()
 const addGoodsBtn = document.querySelector('.product-public-btn')
 
 function sendDataToFunc(data) {
+    console.log('Отправка данных в Web App: ', data) // Добавьте лог для проверки
     tg.sendData(data)
 }
 
-addGoodsBtn.addEventListener('click', ()=> {
-    console.log('hello world')
+addGoodsBtn.addEventListener('click', () => {
+    console.log('hello world') // Проверка клика
     sendDataToFunc('Added products')
 })
+
 
 
 const homeProducts = document.querySelector('.homeproducts');
