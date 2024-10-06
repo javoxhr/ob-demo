@@ -118,11 +118,11 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                           </div>
                         </div>
                         `
-                        // const profiltBtn = document.querySelector('.lets-to-profil')
-                        // const usersInfoWrapper = document.querySelector('.users-profil-info')
-                        // const usersInfoOverlay = document.querySelector('.users-profil-overlay')
-                        // const usersInfoModal = document.querySelector('.users-profil')
-                        // const backBtn = document.querySelector('.back-to-home-btn')
+                        const profiltBtn = document.querySelector('.lets-to-profil')
+                        const usersInfoWrapper = document.querySelector('.users-profil-info')
+                        const usersInfoOverlay = document.querySelector('.users-profil-overlay')
+                        const usersInfoModal = document.querySelector('.users-profil')
+                        const backBtn = document.querySelector('.back-to-home-btn')
 
                         // usersInfoOverlay.addEventListener('click', ()=> {
                         //     usersInfoOverlay.style.display = "none"

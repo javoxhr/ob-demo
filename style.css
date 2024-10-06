@@ -520,7 +520,8 @@ main {
 .my-products {
     width: 100%;
     max-width: 300px;
-    height: 550px;
+    height: fit-content;
+    max-height: 550;
     background: #fff;
     border-radius: 10px;
     position: fixed;
