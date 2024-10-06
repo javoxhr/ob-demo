@@ -127,11 +127,13 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                         usersInfoOverlay.addEventListener('click', ()=> {
                             usersInfoOverlay.style.display = "none"
                             usersInfoModal.style.display = "none"
+                            document.querySelector('body').style.overflow = 'auto'
                         })
 
                         backBtn.addEventListener('click', ()=> {
                             usersInfoOverlay.style.display = "none"
                             usersInfoModal.style.display = "none"
+                            document.querySelector('body').style.overflow = 'auto'
                         })
 
                         profiltBtn.addEventListener('click', ()=> {
