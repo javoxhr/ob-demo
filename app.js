@@ -138,6 +138,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                             infoModalDisible()
                             usersInfoOverlay.style.display = "block"
                             usersInfoModal.style.display = "block"
+                            document.querySelector('body').style.overflow = 'hidden'
                             fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
                             .then((res)=> res.json())
                             .then((data)=> {
