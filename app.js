@@ -124,15 +124,15 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                         const usersInfoModal = document.querySelector('.users-profil')
                         const backBtn = document.querySelector('.back-to-home-btn')
 
-                        // usersInfoOverlay.addEventListener('click', ()=> {
-                        //     usersInfoOverlay.style.display = "none"
-                        //     usersInfoModal.style.display = "none"
-                        // })
+                        usersInfoOverlay.addEventListener('click', ()=> {
+                            usersInfoOverlay.style.display = "none"
+                            usersInfoModal.style.display = "none"
+                        })
 
-                        // backBtn.addEventListener('click', ()=> {
-                        //     usersInfoOverlay.style.display = "none"
-                        //     usersInfoModal.style.display = "none"
-                        // })
+                        backBtn.addEventListener('click', ()=> {
+                            usersInfoOverlay.style.display = "none"
+                            usersInfoModal.style.display = "none"
+                        })
 
                         // profiltBtn.addEventListener('click', ()=> {
                         //     infoModalDisible()
