@@ -4,6 +4,7 @@ tg.expand()
 
 
 const homeProducts = document.querySelector('.homeproducts');
+const siteLoader = document.querySelector('.loader-wrapper')
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -15,11 +16,11 @@ function shuffle(array) {
 
 let product
 
+
 fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
-    .then((res) => res.json())
+    .then((res)=> res.json())
     .then((data) => {
         let htmlContent = '';
-
         product = data
 
         const shuffledData = shuffle(data);
@@ -188,6 +189,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
     })
     .catch((err) => {
         console.error('Ошибка загрузки данных:', err);
+        siteLoader.style.display = "flex"
     });
 
 const MyProducts = document.querySelector('.my-products')
