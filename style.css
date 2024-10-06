@@ -60,7 +60,6 @@ main {
 .name-box {
     display: flex;
     align-items: center;
-    /* gap: 32px; */
     padding: 10px 0;
     height: 80px;
     position: relative;
@@ -300,6 +299,7 @@ main {
 
 .item-mes-btn-wrp a:last-child {
     background: var(--pr-color) !important;
+    color: #000;
 }
 
 @media screen and (max-width: 600px) {
@@ -582,9 +582,9 @@ main {
     width: 100%;
     padding: 9px;
     border: none;
-    background: var(--main-color);
+    background: var(--pr-color);
     border-radius: 5px;
-    color: #fff;
+    color: #000;
     font-weight: 600;
     font-size: 15.5px;
     margin-top: 10px;
@@ -624,7 +624,7 @@ main {
     left: 0;
     width: 100%;
     padding: 10px;
-    background: var(--main-color);
+    background: var(--sub-pr-color);
     color: #fff;
     z-index: 3;
 }
@@ -648,7 +648,7 @@ main {
     width: 100%;
     padding: 9px;
     border: none;
-    background: var(--main-color);
+    background: var(--sub-pr-color);
     border-radius: 5px;
     color: #fff;
     font-weight: 600;
@@ -690,18 +690,21 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    overflow: auto;
     display: none;
 }
 
 .users-profil-info {
     padding: 10px 20px 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: fit-content;
-    max-height: 430px;
+}
+
+@media screen and (max-width: 700px) {
+    .users-profil-info {
+      grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .main-title-last {
