@@ -669,8 +669,15 @@ main {
 }
 
 .users-profil-info {
-    padding: 20px;
+    padding: 20px 20px 0;
     margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: fit-content;
+    max-height: 430px;
 }
 
 .back-btn-users {
