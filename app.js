@@ -65,10 +65,12 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
         const modalBody = document.querySelector('.info-modal-body')
         const body = document.querySelector('body')
 
+
         function infoModalVisible() {
             infoModal.classList.add("active-modal")
             infoModalOverlay.classList.add("active-overlay")
             body.style.overflow = 'hidden'
+            document.querySelector('.info-modal').scrollTop = 0;
         }
 
         function infoModalDisible() {
