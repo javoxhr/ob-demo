@@ -66,8 +66,8 @@ main {
 }
 
 .name-box h1 {
-    background: #000;
-    color: #fff;
+    /* background: #000;
+    color: #fff; */
     padding: 12px;
     border-radius: 8px;
     text-align: center;
