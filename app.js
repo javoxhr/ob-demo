@@ -117,7 +117,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                         <div class="item-detail">
                         <img class="detail-img" src="${src}" alt="${item.title}">
                           <div class="detail-text-wrapper">
-                            <h2 class="item-title">${item.title}</h2>
+                            <h2 class="item-title detail-tit">${item.title}</h2>
                             <h3>${item.price} UZS</h3>
                             <span>${item.location}</span>
                             <h3 class="detail-desc">Описание: </h3>

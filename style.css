@@ -339,7 +339,7 @@ main {
 .detail-text-wrapper p {
     width: 100%;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     color: #212121;
     margin-top: -5px;
 }
@@ -764,6 +764,10 @@ main {
     justify-content: center;
     z-index: 10;
     display: none;
+}
+
+.detail-tit {
+    margin-top: 15px;
 }
 
 .loader {
