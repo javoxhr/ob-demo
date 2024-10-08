@@ -573,9 +573,9 @@ main {
     width: 100%;
     padding: 9px;
     border: none;
-    background: var(--pr-color);
+    background: #000;
     border-radius: 5px;
-    color: #000;
+    color: #fff;
     font-weight: 600;
     font-size: 15.5px;
     margin-top: 10px;
@@ -583,6 +583,10 @@ main {
     position: fixed;
     bottom: 0;
     left: 0;
+}
+
+.user-profil-info-wrp {
+    overflow: auto;
 }
 
 .my-product-img {
@@ -693,7 +697,6 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
-    overflow: auto;
     height: 420px;
 }
 
