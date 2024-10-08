@@ -569,15 +569,19 @@ main {
     gap: 10px;
 }
 
+#tg-user-name {
+    font-size: 25px;
+}
+
 .back-to-home-btn {
     width: 100%;
-    padding: 9px;
+    padding: 13px;
     border: none;
     background: #000;
     border-radius: 5px;
     color: #fff;
     font-weight: 600;
-    font-size: 15.5px;
+    font-size: 18px;
     margin-top: 10px;
     cursor: pointer;
     position: fixed;
