@@ -580,6 +580,9 @@ main {
     font-size: 15.5px;
     margin-top: 10px;
     cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 .my-product-img {
