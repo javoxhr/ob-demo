@@ -593,6 +593,7 @@ main {
 
 .my-product {
     width: 100%;
+    height: fit-content;
     border: 2px solid #bcbcbc;
     padding: 8px;
     border-radius: 6px;
