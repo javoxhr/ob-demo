@@ -14,8 +14,10 @@ fetch('block-users.json')
         let tgUserName = `${tg.initDataUnsafe.user.username}`
         if(tgUserName == el.blockUser) {
             blockUserBox.style.display = "flex"
+            document.querySelector('body').style.overflow = "hidden"
         } else {
             blockUserBox.style.display = "none"
+            document.querySelector('body').style.overflow = "auto"
         }
     })
 })
