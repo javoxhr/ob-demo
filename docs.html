@@ -37,6 +37,7 @@
             max-width: 300px;
             font-size: 25px;
         }
+
         .docs {
             padding: 20px;
             width: 100%;
@@ -61,9 +62,21 @@
             bottom: 10px;
             right: 10px;
         }
+
         .scroll-top:active {
             opacity: 0.9;
             cursor: pointer;
+        }
+
+        .back-btn {
+            background: #000;
+            color: #fff;
+            padding: 10px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            position: fixed;
+            top: 19px;
+            right: 20px;
         }
     </style>
 </head>
@@ -71,6 +84,7 @@
 <body>
     <div class="docs">
         <button class="scroll-top"><img width="20px" src="./images/arrow.png" alt=""></button>
+        <a href="./index.html" class="back-btn">Назад</a>
         <h1>Документация</h1>
         <div class="docs-wrapper">
             <div class="top-p">
@@ -117,6 +131,30 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        const scrolTop = document.querySelector('.scroll-top');
+
+        scrolTop.style.display = "none"
+
+        scrolTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('scroll', ()=> {
+            console.log(Math.round(window.scrollY))
+            if(window.scrollY > 25) {
+                scrolTop.style.display = "block"
+            } else {
+                scrolTop.style.display = "none"
+            }
+        })
+
+    </script>
 </body>
 
 </html>

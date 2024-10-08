@@ -49,6 +49,12 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                 return src;
             });
 
+            const blockUser = document.querySelector('.for-block-users')
+
+            if(item.blockUser == true) {
+                blockUser.style.display = 'none'
+            }
+
             htmlContent += `
                 <div class="item-wrp">
                     <img class="item-img" src="https://raw.githubusercontent.com/javoxhr/data/main/images/image_${src ? src : 'AgACAgIAAxkBAAIGqWby6Q9W77bO3lOddm5fuXxYNSJyAAI16DEbLqqRSxPGZp2mWjhMAQADAgADeQADNgQ'}.jpg" alt="Image for ${item.title}">
