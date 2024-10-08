@@ -23,12 +23,12 @@ fetch('block-users.json')
 })
 
 function sendDataToFunc(data) {
-    console.log('Отправка данных в Web App: ', data) // Добавьте лог для проверки
+    console.log('Отправка данных в Web App: ', data)
     tg.sendData(data)
 }
 
 addGoodsBtn.addEventListener('click', () => {
-    console.log('hello world') // Проверка клика
+    console.log('hello world')
     sendDataToFunc('Added products')
 })
 
@@ -266,11 +266,13 @@ const userModal = document.querySelector('.profil-modal')
 function userRemoveModal() {
     userModal.classList.remove('active-user-modal')
     userModalOverlay.classList.remove('active-user-modal')
+    document.querySelector('body').style.overflow = "auto"
 }
 
 userModalBtn.addEventListener('click', () => {
     userModal.classList.add('active-user-modal')
     userModalOverlay.classList.add('active-user-modal')
+    document.querySelector('body').style.overflow = "hidden"
 })
 
 userModalOverlay.addEventListener('click', () => userRemoveModal())
