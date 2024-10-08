@@ -15,7 +15,7 @@ fetch('block-users.json')
         if(tgUserName == el.blockUser) {
             blockUserBox.style.display = "flex"
         } else {
-            blockUserBox.style.display = "block"
+            blockUserBox.style.display = "nonenew"
         }
     })
 })
