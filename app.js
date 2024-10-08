@@ -4,6 +4,22 @@ tg.expand()
 
 const addGoodsBtn = document.querySelector('.product-public-btn')
 
+// block users
+const blockUserBox = document.querySelector('.for-block-users')
+
+fetch('block-users.json')
+.then((res)=> res.json())
+.then((data)=> {
+    data.forEach((el)=> {
+        let tgUserName = `${tg.initDataUnsafe.user.username}`
+        if(tgUserName == el.blockUser) {
+            blockUserBox.style.display = "flex"
+        } else {
+            blockUserBox.style.display = "block"
+        }
+    })
+})
+
 function sendDataToFunc(data) {
     console.log('Отправка данных в Web App: ', data) // Добавьте лог для проверки
     tg.sendData(data)
