@@ -574,7 +574,7 @@ main {
 }
 
 .back-to-home-btn {
-    width: 100%;
+    width: 95%;
     padding: 13px;
     border: none;
     background: #000;
@@ -585,11 +585,11 @@ main {
     margin-top: 10px;
     cursor: pointer;
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 12.8px;
 }
 
 .user-profil-info-wrp {
+    height: 83vh;
     overflow: auto;
 }
 
@@ -626,7 +626,7 @@ main {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px;
+    padding: 11px;
     background: var(--sub-pr-color);
     color: #fff;
     z-index: 3;
@@ -701,7 +701,6 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
-    height: 420px;
 }
 
 @media screen and (max-width: 700px) {
