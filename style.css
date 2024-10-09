@@ -628,6 +628,11 @@ main {
     left: 8px;
 }
 
+.search-list {
+    border: 1px solid;
+    height: fit-content;
+}
+
 .my-product {
     width: 100%;
     height: fit-content;

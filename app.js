@@ -8,19 +8,19 @@ const addGoodsBtn = document.querySelector('.product-public-btn')
 const blockUserBox = document.querySelector('.for-block-users')
 
 fetch('block-users.json')
-.then((res)=> res.json())
-.then((data)=> {
-    data.forEach((el)=> {
-        let tgUserName = `${tg.initDataUnsafe.user.username}`
-        if(tgUserName == el.blockUser) {
-            blockUserBox.style.display = "flex"
-            document.querySelector('body').style.overflow = "hidden"
-        } else {
-            blockUserBox.style.display = "none"
-            document.querySelector('body').style.overflow = "auto"
-        }
+    .then((res) => res.json())
+    .then((data) => {
+        data.forEach((el) => {
+            let tgUserName = `${tg.initDataUnsafe.user.username}`
+            if (tgUserName == el.blockUser) {
+                blockUserBox.style.display = "flex"
+                document.querySelector('body').style.overflow = "hidden"
+            } else {
+                blockUserBox.style.display = "none"
+                document.querySelector('body').style.overflow = "auto"
+            }
+        })
     })
-})
 
 function sendDataToFunc(data) {
     console.log('Отправка данных в Web App: ', data)
@@ -49,7 +49,7 @@ let product
 
 
 fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
-    .then((res)=> res.json())
+    .then((res) => res.json())
     .then((data) => {
         let htmlContent = '';
         product = data
@@ -69,7 +69,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
 
             const blockUser = document.querySelector('.for-block-users')
 
-            if(item.blockUser == true) {
+            if (item.blockUser == true) {
                 blockUser.style.display = 'none'
             }
 
@@ -159,9 +159,9 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                           </div>
                         </div>
                         `
-            
+
                         const detailClose = document.querySelector('#detail-back')
-                        detailClose.addEventListener('click', ()=> {
+                        detailClose.addEventListener('click', () => {
                             infoModalDisible()
                         })
                         const profiltBtn = document.querySelector('.lets-to-profil')
@@ -170,37 +170,37 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                         const usersInfoModal = document.querySelector('.users-profil')
                         const backBtn = document.querySelector('.back-to-home-btn')
 
-                        usersInfoOverlay.addEventListener('click', ()=> {
+                        usersInfoOverlay.addEventListener('click', () => {
                             usersInfoOverlay.style.display = "none"
                             usersInfoModal.style.display = "none"
                             document.querySelector('body').style.overflow = 'auto'
                         })
 
-                        backBtn.addEventListener('click', ()=> {
+                        backBtn.addEventListener('click', () => {
                             usersInfoOverlay.style.display = "none"
                             usersInfoModal.style.display = "none"
                             document.querySelector('body').style.overflow = 'auto'
                         })
 
-                        profiltBtn.addEventListener('click', ()=> {
+                        profiltBtn.addEventListener('click', () => {
                             infoModalDisible()
                             usersInfoOverlay.style.display = "block"
                             usersInfoModal.style.display = "block"
                             document.querySelector('body').style.overflow = 'hidden'
                             fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
-                            .then((res)=> res.json())
-                            .then((data)=> {
-                                usersInfoWrapper.innerHTML = ""
-                                data.forEach((el)=> {
-                                    let src
-                                    el.images.forEach((img)=> {
-                                        let image = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${img.id}.jpg`
-                                        src = image
-                                        return src
-                                    })
-                                    if(el.username == getForIfUserName) {
-                                        console.log(el)
-                                        usersInfoWrapper.innerHTML += `
+                                .then((res) => res.json())
+                                .then((data) => {
+                                    usersInfoWrapper.innerHTML = ""
+                                    data.forEach((el) => {
+                                        let src
+                                        el.images.forEach((img) => {
+                                            let image = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${img.id}.jpg`
+                                            src = image
+                                            return src
+                                        })
+                                        if (el.username == getForIfUserName) {
+                                            console.log(el)
+                                            usersInfoWrapper.innerHTML += `
                                         <div class="my-product">
                                         <img class="my-product-img" src="${src}">
                                         <h2>${el.title}</h2>
@@ -209,9 +209,9 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                                         <button class="my-product-btn">Посмотреть</button>
                                         </div>
                                         `
-                                    }
+                                        }
+                                    })
                                 })
-                            })
                             console.log(getForIfUserName)
                             console.log(item.username)
 
@@ -258,6 +258,34 @@ fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
             }
         })
     })
+
+const search = document.querySelector('#search-input');
+
+search.addEventListener('input', () => {
+    fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
+        .then((res) => res.json())
+        .then((data) => {
+            const searchTerm = search.value.toLowerCase();
+            const searchList = document.querySelector("#list-search");
+
+            searchList.innerHTML = '';
+
+            if(searchTerm == '') {
+                return
+            }
+
+            const filteredData = data.filter(el => el.title.toLowerCase().includes(searchTerm));
+
+            if (filteredData.length > 0) {
+                const listItems = filteredData.map(el => `<li>${el.title}</li>`).join('');
+                searchList.innerHTML = listItems;
+            } else {
+                searchList.innerHTML = '<li>Ничего не найдено</li>';
+            }
+        })
+        .catch(error => console.error('Ошибка при получении данных:', error));
+});
+
 
 const userModalBtn = document.querySelector('.user-profil')
 const userModalOverlay = document.querySelector('.profil-modal-overlay')
