@@ -32,8 +32,6 @@ addGoodsBtn.addEventListener('click', () => {
     sendDataToFunc('Added products')
 })
 
-
-
 const homeProducts = document.querySelector('.homeproducts');
 const siteLoader = document.querySelector('.loader-wrapper')
 
@@ -260,6 +258,21 @@ fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
     })
 
 const search = document.querySelector('#search-input');
+const listSearch = document.querySelector('.search-wrap')
+
+window.addEventListener("scroll", ()=> {
+    if(window.scrollY > 125) {
+        listSearch.style.position = "fixed"
+        listSearch.style.width = "100%"
+        listSearch.style.left = "0"
+        listSearch.style.top = "-10px"
+    } else {
+        listSearch.style.width = "100%"
+        listSearch.style.left = "0"
+        listSearch.style.position = "relative"
+        listSearch.style.top = "0px"
+    }
+})
 
 search.addEventListener('input', () => {
     fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
@@ -270,7 +283,10 @@ search.addEventListener('input', () => {
 
             searchList.innerHTML = '';
 
+            searchList.style.display = "flex"
+
             if(searchTerm == '') {
+                searchList.style.display = "none"
                 return
             }
 
@@ -279,6 +295,7 @@ search.addEventListener('input', () => {
             if (filteredData.length > 0) {
                 const listItems = filteredData.map(el => `<li>${el.title}</li>`).join('');
                 searchList.innerHTML = listItems;
+                searchList.style.display = "flex"
             } else {
                 searchList.innerHTML = '<li>Ничего не найдено</li>';
             }
