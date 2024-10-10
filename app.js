@@ -259,12 +259,13 @@ fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
 
 const search = document.querySelector('#search-input');
 const listSearch = document.querySelector('.search-wrap')
+const searchWr = document.querySelector('.search')
 
 window.addEventListener("scroll", ()=> {
     if(window.scrollY > 125) {
         listSearch.style.position = "fixed"
-        listSearch.style.width = "100%"
-        listSearch.style.left = "0"
+        listSearch.style.width = "90%"
+        listSearch.style.left = "20px"
         listSearch.style.top = "-10px"
     } else {
         listSearch.style.width = "100%"
