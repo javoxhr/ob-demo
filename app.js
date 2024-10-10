@@ -264,8 +264,8 @@ const searchWr = document.querySelector('.search')
 window.addEventListener("scroll", ()=> {
     if(window.scrollY > 125) {
         listSearch.style.position = "fixed"
-        listSearch.style.width = "90%"
-        listSearch.style.left = "20px"
+        listSearch.style.width = "92%"
+        listSearch.style.left = "16px"
         listSearch.style.top = "-10px"
     } else {
         listSearch.style.width = "100%"
