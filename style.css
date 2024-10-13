@@ -392,8 +392,8 @@ main {
 }
 
 .user-profil {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 40%;
     display: flex;
     align-items: center;
@@ -409,7 +409,7 @@ main {
     cursor: pointer;
     position: absolute;
     left: 0;
-    top: 11px;
+    top: 12.5px;
 }
 
 .user-profil:active {
@@ -417,8 +417,8 @@ main {
 }
 
 .user-profil img {
-    width: 25px;
-    height: 25px;
+    width: 21px;
+    height: 21px;
 }
 
 .profil-modal {
