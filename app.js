@@ -56,7 +56,7 @@ function colorGener(text) {
         case 'J':
             return '#ba25ba'
         default:
-            return "#90EE90"
+            return "#3fb03f"
     }
 }
 
@@ -101,6 +101,10 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                         <h2 class="item-title">${item.title}</h2>
                         <span class="item-price">${item.price} UZS</span>
                         <span class="item-location">${item.location ? item.location : 'Локация не указана'}</span>
+                            <div class="sem-wrapper">
+                                <img class="sem" src="./images/sem.png" alt="">
+                                <span class="sem-txt">${item.username ? item.username : "Anonim"}</span>
+                            </div>
                         <div class="item-btns-wrp">
                             <a href="https://t.me/${item.username}" class="check-btn">Написать</a>
                             <a href="#" class="call-btn">Позвонить</a>
@@ -364,8 +368,8 @@ search.addEventListener('input', () => {
                                                    <span>${sortItem.price} UZS</span>
                                                    <span>${sortItem.location}</span>
                                                    <div class="sem-wrapper">
+                                                      <img class="sem" src="./images/sem.png" alt="">
                                                       <span class="sem-txt">${sortItem.username ? sortItem.username : "Anonim"}</span>
-                                                     <img class="sem" src="./images/sem.png" alt="">
                                                    </div>
                                                  <div>
                                                 </div>
