@@ -78,8 +78,6 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                         <h2 class="item-title">${item.title}</h2>
                         <span class="item-price">${item.price} UZS</span>
                         <span class="item-location">${item.location ? item.location : 'Локация не указана'}</span>
-                        <span class="time">${item.created_at}</span>
-                        <div class="images">${imagesHTML}</div>
                         <div class="item-btns-wrp">
                             <a href="https://t.me/${item.username}" class="check-btn">Написать</a>
                             <a href="#" class="call-btn">Позвонить</a>
