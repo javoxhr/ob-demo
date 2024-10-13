@@ -331,7 +331,10 @@ search.addEventListener('input', () => {
                                                    <h2>${sortItem.title}</h2>
                                                    <span>${sortItem.price} UZS</span>
                                                    <span>${sortItem.location}</span>
-                                                   <button>Посмотреть</button>
+                                                   <div class="sem-wrapper">
+                                                      <span class="sem-txt">Продавец: ${sortItem.username ? sortItem.username : "Anonim"}</span>
+                                                     <img class="sem" src="./images/sem.png" alt="">
+                                                   </div>
                                                  <div>
                                                 </div>
                                                 `

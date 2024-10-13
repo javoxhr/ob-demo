@@ -945,7 +945,7 @@ main {
  .sort-products {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
+    gap: 10px;
  }
 
  .sort-product img {
@@ -987,8 +987,25 @@ main {
  }
 
  .sort-category-header button {
-    padding: 6px 8px;
+    padding: 10px 12px;
     background: var(--sub-pr-color);
     color: #fff;
     border: none;
+ }
+
+ .sem {
+    width: 20px !important;
+    height: 20px !important;
+ }
+
+ .sem-txt {
+    width: 135px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ }
+
+ .sem-wrapper {
+    display: flex;
+    align-items: center;
  }
