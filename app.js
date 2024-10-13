@@ -321,9 +321,11 @@ search.addEventListener('input', () => {
                                                 })
                                                 sortCloseBtn.addEventListener('click', ()=> {
                                                   sortCategory.style.display = "none"
+                                                  document.querySelector('body').style.overflow = 'auto'
                                                 })
                                                 console.log(sortItem)
                                                 sortCategory.style.display = "block"
+                                                document.querySelector('body').style.overflow = 'hidden'
                                                 sortProductsWrp.innerHTML += `
                                                 <div class="sort-product">
                                                  <img src="${src}" alt="">
@@ -332,7 +334,7 @@ search.addEventListener('input', () => {
                                                    <span>${sortItem.price} UZS</span>
                                                    <span>${sortItem.location}</span>
                                                    <div class="sem-wrapper">
-                                                      <span class="sem-txt">Продавец: ${sortItem.username ? sortItem.username : "Anonim"}</span>
+                                                      <span class="sem-txt">${sortItem.username ? sortItem.username : "Anonim"}</span>
                                                      <img class="sem" src="./images/sem.png" alt="">
                                                    </div>
                                                  <div>

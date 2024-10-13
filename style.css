@@ -987,6 +987,8 @@ main {
  }
 
  .sort-category-header button {
+    font-weight: 600;
+    font-size: 16px;
     padding: 10px 12px;
     background: var(--sub-pr-color);
     color: #fff;
@@ -998,14 +1000,15 @@ main {
     height: 20px !important;
  }
 
- .sem-txt {
+ /* .sem-txt {
     width: 135px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
- }
+ } */
 
  .sem-wrapper {
     display: flex;
     align-items: center;
+    gap: 5px;
  }
