@@ -165,7 +165,7 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -732,7 +732,7 @@ main {
 
 .item-price {
     font-weight: 500;
-    font-size: 19px;
+    font-size: 17px;
 }
 
 .users-profil-overlay {

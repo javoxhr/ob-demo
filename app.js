@@ -7,6 +7,14 @@ const addGoodsBtn = document.querySelector('.product-public-btn')
 // block users
 const blockUserBox = document.querySelector('.for-block-users')
 
+function formatPriceUZS(price) {
+    const formattedNumber = new Intl.NumberFormat('uz-UZ', { 
+        minimumFractionDigits: 0, 
+        maximumFractionDigits: 0 
+    }).format(price);
+    return `${formattedNumber} UZS`;
+}
+
 fetch('block-users.json')
     .then((res) => res.json())
     .then((data) => {
@@ -99,7 +107,7 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
                     <img class="item-img" src="https://raw.githubusercontent.com/javoxhr/data/main/images/image_${src ? src : 'AgACAgIAAxkBAAIGqWby6Q9W77bO3lOddm5fuXxYNSJyAAI16DEbLqqRSxPGZp2mWjhMAQADAgADeQADNgQ'}.jpg" alt="Image for ${item.title}">
                     <div class="item-text-wrapper">
                         <h2 class="item-title">${item.title}</h2>
-                        <span class="item-price">${item.price} UZS</span>
+                        <span class="item-price">${formatPriceUZS(item.price)}</span>
                         <span class="item-location">${item.location ? item.location : 'Локация не указана'}</span>
                             <div class="sem-wrapper">
                                 <img class="sem" src="./images/sem.png" alt="">
