@@ -1021,12 +1021,12 @@ main {
  }
 
  .serachEvent {
-    animation: search-anim .5s forwards;
+    animation: search-anim .3s forwards;
  }
 
  @keyframes search-anim {
     from {
-        top: -20px;
+        top: -35px;
     }
     to {
         top: 0;
