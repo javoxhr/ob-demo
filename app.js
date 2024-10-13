@@ -50,13 +50,13 @@ function colorGener(text) {
 
     switch (firstLatter) {
         case 'A':
-            return 'blue'
+            return '#00008B'
         case 'B':
-            return 'red'
+            return '#9932CC'
         case 'J':
-            return 'blueviolet'
+            return '#ba25ba'
         default:
-            return "#000"
+            return "#90EE90"
     }
 }
 
