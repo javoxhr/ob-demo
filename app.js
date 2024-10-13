@@ -45,6 +45,29 @@ function shuffle(array) {
 
 let product
 
+function colorGener(text) {
+    const firstLatter = text.charAt(0).toUpperCase()
+
+    switch (firstLatter) {
+        case 'A':
+            return 'blue'
+        case 'B':
+            return 'red'
+        case 'J':
+            return 'blueviolet'
+        default:
+            return "#000"
+    }
+}
+
+function applyColorToText(text) {
+    const color = colorGener(text);
+    const textElement = document.createElement('span');
+    textElement.textContent = text;
+    textElement.style.background = color;
+    return textElement;
+}
+
 
 fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
     .then((res) => res.json())
@@ -119,105 +142,111 @@ fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
 
         itemTitle.forEach((el, i) => {
             el.addEventListener('click', () => {
-                console.log(i)
-                infoModalVisible()
-                let getForIfUserName = ""
+                console.log(i);
+                infoModalVisible();
+                let getForIfUserName = "";
                 product.forEach((item, itemIndex) => {
                     if (i == itemIndex) {
-                        let src = ''
+                        let src = '';
                         item.images.forEach((img) => {
-                            img = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${img.id}.jpg`
-                            src = img
-                            console.log(src)
-                            return src
-                        })
-                        getForIfUserName = item.username ? item.username : "Anonim 🚫"
-                        console.log(item)
+                            img = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${img.id}.jpg`;
+                            src = img;
+                            console.log(src);
+                            return src;
+                        });
+                        getForIfUserName = item.username ? item.username : "Anonim 🚫";
+                        console.log(item);
                         modalBody.innerHTML = `
-                        <div class="item-detail">
-                        <img class="detail-img" src="${src}" alt="${item.title}">
-                          <div class="detail-text-wrapper">
-                            <h2 class="item-title detail-tit">${item.title}</h2>
-                            <h3>${item.price} UZS</h3>
-                            <span>${item.location}</span>
-                            <h3 class="detail-desc">Описание: </h3>
-                            <p>
-                              ${item.description}
-                            </p>
-                            <span>Категорие: ${item.category}</span>
-                            <span class="user-username"><h2>Продавец: </h2><span class="detail-users-profil"> ${item.username ? item.username : 'Admin'}</span></span>
-                            <div class="item-mes-btn-wrp">
-                              <a class="detail-message-btn" href="https://t.me/${item.username}">Написать</a>
-                              <a class="detail-message-btn" href="https://t.me/${item.username}">Позвонить</a>
-                            </div>
-                            <button class="lets-to-profil">Перейти к профил</button>
-                            <button id="detail-back">Назад</button>
-                          </div>
+                <div class="item-detail">
+                    <img class="detail-img" src="${src}" alt="${item.title}">
+                    <div class="detail-text-wrapper">
+                        <h2 class="item-title detail-tit">${item.title}</h2>
+                        <h3>${item.price} UZS</h3>
+                        <span>${item.location}</span>
+                        <h3 class="detail-desc">Описание: </h3>
+                        <p>${item.description}</p>
+                        <span>Категория: ${item.category}</span>
+                        <span class="user-username"><h2>Продавец: </h2><span class="detail-users-profil">${item.username}</span></span>
+                        <div class="item-mes-btn-wrp">
+                            <a class="detail-message-btn" href="https://t.me/${item.username}">Написать</a>
+                            <a class="detail-message-btn" href="https://t.me/${item.username}">Позвонить</a>
                         </div>
-                        `
+                        <button class="lets-to-profil">Перейти к профилю</button>
+                        <button id="detail-back">Назад</button>
+                    </div>
+                </div>
+                `;
 
-                        const detailClose = document.querySelector('#detail-back')
+                        const detailUserProfile = document.querySelector('#gener-rounded');
+                        detailUserProfile.innerHTML = "";
+                        const firstLetter = getForIfUserName ? getForIfUserName.charAt(0).toUpperCase() : '🚫';
+                        const coloredUserName = applyColorToText(firstLetter);
+                        detailUserProfile.appendChild(coloredUserName);
+
+                        const detailClose = document.querySelector('#detail-back');
                         detailClose.addEventListener('click', () => {
-                            infoModalDisible()
-                        })
-                        const profiltBtn = document.querySelector('.lets-to-profil')
-                        const usersInfoWrapper = document.querySelector('.users-profil-info')
-                        const usersInfoOverlay = document.querySelector('.users-profil-overlay')
-                        const usersInfoModal = document.querySelector('.users-profil')
-                        const backBtn = document.querySelector('.back-to-home-btn')
+                            infoModalDisible();
+                        });
+
+                        const profiltBtn = document.querySelector('.lets-to-profil');
+                        const usersInfoWrapper = document.querySelector('.users-profil-info');
+                        const usersInfoOverlay = document.querySelector('.users-profil-overlay');
+                        const usersInfoModal = document.querySelector('.users-profil');
+                        const backBtn = document.querySelector('.back-to-home-btn');
 
                         usersInfoOverlay.addEventListener('click', () => {
-                            usersInfoOverlay.style.display = "none"
-                            usersInfoModal.style.display = "none"
-                            document.querySelector('body').style.overflow = 'auto'
-                        })
+                            usersInfoOverlay.style.display = "none";
+                            usersInfoModal.style.display = "none";
+                            document.querySelector('body').style.overflow = 'auto';
+                        });
 
                         backBtn.addEventListener('click', () => {
-                            usersInfoOverlay.style.display = "none"
-                            usersInfoModal.style.display = "none"
-                            document.querySelector('body').style.overflow = 'auto'
-                        })
+                            usersInfoOverlay.style.display = "none";
+                            usersInfoModal.style.display = "none";
+                            document.querySelector('body').style.overflow = 'auto';
+                        });
 
                         profiltBtn.addEventListener('click', () => {
-                            infoModalDisible()
-                            usersInfoOverlay.style.display = "block"
-                            usersInfoModal.style.display = "block"
-                            document.querySelector('body').style.overflow = 'hidden'
+                            infoModalDisible();
+                            usersInfoOverlay.style.display = "block";
+                            usersInfoModal.style.display = "block";
+                            document.querySelector('body').style.overflow = 'hidden';
                             fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
                                 .then((res) => res.json())
                                 .then((data) => {
-                                    usersInfoWrapper.innerHTML = ""
+                                    usersInfoWrapper.innerHTML = "";
                                     data.forEach((el) => {
-                                        let src
+                                        let src;
                                         el.images.forEach((img) => {
-                                            let image = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${img.id}.jpg`
-                                            src = image
-                                            return src
-                                        })
+                                            let image = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${img.id}.jpg`;
+                                            src = image;
+                                            return src;
+                                        });
                                         if (el.username == getForIfUserName) {
-                                            console.log(el)
+                                            console.log(el);
                                             usersInfoWrapper.innerHTML += `
-                                        <div class="my-product">
+                                    <div class="my-product">
                                         <img class="my-product-img" src="${src}">
                                         <h2>${el.title}</h2>
                                         <span>${el.price} UZS</span>
                                         <span>${el.location}</span>
                                         <button class="my-product-btn">Посмотреть</button>
-                                        </div>
-                                        `
+                                    </div>
+                                    `;
                                         }
-                                    })
-                                })
-                            console.log(getForIfUserName)
-                            console.log(item.username)
+                                    });
+                                });
+                            console.log(getForIfUserName);
+                            console.log(item.username);
 
-                            const usersName = document.querySelector('#user-id')
-                            usersName.textContent = getForIfUserName
-                        })
+                            const usersName = document.querySelector('#user-id');
+                            usersName.textContent = getForIfUserName;
+                        });
                     }
-                })
-            })
-        })
+                });
+            });
+        });
+
 
     })
     .catch((err) => {
@@ -229,6 +258,7 @@ const MyProducts = document.querySelector('.my-products')
 const userProductsWrp = document.querySelector('.profil-products')
 
 // userNme.textContent = tgUserName
+
 
 fetch('https://raw.githubusercontent.com/javoxhr/data/main/data.json')
     .then((res) => res.json())
@@ -299,34 +329,34 @@ search.addEventListener('input', () => {
                 listItm.forEach((itm) => {
                     itm.addEventListener('click', () => {
                         fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
-                        .then((res)=> res.json())
-                        .then((data)=> {
-                            data.forEach((el)=> {
-                                if(itm.textContent == el.title) {
-                                    console.log(el.category)
-                                    const sortProductsWrp = document.querySelector('.sort-products')
-                                    const sortCategory = document.querySelector('.sort-category')
-                                    const sortCloseBtn = document.querySelector('#sort-close')
-                                    sortProductsWrp.innerHTML = ''; 
-                                    fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
-                                    .then((sort)=> sort.json())
-                                    .then((sortData)=> {
-                                        sortData.forEach((sortItem)=> {
-                                            if(el.category == sortItem.category) {
-                                                let src = ''
-                                                sortItem.images.forEach((im) => {
-                                                    let img = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${im.id}.jpg`
-                                                    src = img
-                                                    return src
-                                                })
-                                                sortCloseBtn.addEventListener('click', ()=> {
-                                                  sortCategory.style.display = "none"
-                                                  document.querySelector('body').style.overflow = 'auto'
-                                                })
-                                                console.log(sortItem)
-                                                sortCategory.style.display = "block"
-                                                document.querySelector('body').style.overflow = 'hidden'
-                                                sortProductsWrp.innerHTML += `
+                            .then((res) => res.json())
+                            .then((data) => {
+                                data.forEach((el) => {
+                                    if (itm.textContent == el.title) {
+                                        console.log(el.category)
+                                        const sortProductsWrp = document.querySelector('.sort-products')
+                                        const sortCategory = document.querySelector('.sort-category')
+                                        const sortCloseBtn = document.querySelector('#sort-close')
+                                        sortProductsWrp.innerHTML = '';
+                                        fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
+                                            .then((sort) => sort.json())
+                                            .then((sortData) => {
+                                                sortData.forEach((sortItem) => {
+                                                    if (el.category == sortItem.category) {
+                                                        let src = ''
+                                                        sortItem.images.forEach((im) => {
+                                                            let img = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${im.id}.jpg`
+                                                            src = img
+                                                            return src
+                                                        })
+                                                        sortCloseBtn.addEventListener('click', () => {
+                                                            sortCategory.style.display = "none"
+                                                            document.querySelector('body').style.overflow = 'auto'
+                                                        })
+                                                        console.log(sortItem)
+                                                        sortCategory.style.display = "block"
+                                                        document.querySelector('body').style.overflow = 'hidden'
+                                                        sortProductsWrp.innerHTML += `
                                                 <div class="sort-product">
                                                  <img src="${src}" alt="">
                                                  <div class="sort-product-text-wrp">
@@ -340,12 +370,12 @@ search.addEventListener('input', () => {
                                                  <div>
                                                 </div>
                                                 `
-                                            }
-                                        })
-                                    })
-                                }
+                                                    }
+                                                })
+                                            })
+                                    }
+                                })
                             })
-                        })
                     })
                 })
             } else {
