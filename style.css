@@ -592,7 +592,7 @@ main {
 }
 
 .user-profil-info-wrp {
-    height: 81vh;
+    height: 90vh;
     overflow: auto;
 }
 
@@ -654,16 +654,21 @@ main {
     width: 100%;
     height: fit-content;
     border: 2px solid #bcbcbc;
-    padding: 8px;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    padding-bottom: 10px;
+}
+
+.my-product span {
+    padding-left: 7px;
 }
 
 .my-product h2 {
     font-weight: 600;
     font-size: 17px;
+    padding-left: 7px;
 }
 
 .my-products {
@@ -681,6 +686,7 @@ main {
     background: var(--sub-pr-color);
     color: #fff;
     z-index: 3;
+    display: none;
 }
 
 .my-product-btn {
@@ -692,6 +698,7 @@ main {
     font-weight: 600;
     font-size: 15.5px;
     cursor: pointer;
+    display: none;
 }
 
 .my-product-btn:active {
@@ -776,9 +783,9 @@ main {
     padding: 10px;
 }
 
-.users-profil-wrapper {
+/* .users-profil-wrapper {
     margin-top: 50px;
-}
+} */
 
 .proifile-users-wrap {
     display: flex;
