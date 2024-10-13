@@ -1019,3 +1019,16 @@ main {
     align-items: center;
     gap: 5px;
  }
+
+ .serachEvent {
+    animation: search-anim .5s forwards;
+ }
+
+ @keyframes search-anim {
+    from {
+        top: -20px;
+    }
+    to {
+        top: 0;
+    }
+ }

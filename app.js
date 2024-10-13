@@ -299,11 +299,13 @@ window.addEventListener("scroll", () => {
         listSearch.style.width = "92%"
         listSearch.style.left = "16px"
         listSearch.style.top = "0px"
+        listSearch.classList.add('serachEvent')
     } else {
         listSearch.style.width = "100%"
         listSearch.style.left = "0"
         listSearch.style.position = "relative"
         listSearch.style.top = "0px"
+        listSearch.classList.remove('serachEvent')
     }
 })
 
