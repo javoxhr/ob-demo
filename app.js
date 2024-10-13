@@ -261,12 +261,12 @@ const search = document.querySelector('#search-input');
 const listSearch = document.querySelector('.search-wrap')
 const searchWr = document.querySelector('.search')
 
-window.addEventListener("scroll", ()=> {
-    if(window.scrollY > 125) {
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 125) {
         listSearch.style.position = "fixed"
         listSearch.style.width = "92%"
         listSearch.style.left = "16px"
-        listSearch.style.top = "-10px"
+        listSearch.style.top = "0px"
     } else {
         listSearch.style.width = "100%"
         listSearch.style.left = "0"
@@ -286,7 +286,7 @@ search.addEventListener('input', () => {
 
             searchList.style.display = "flex"
 
-            if(searchTerm == '') {
+            if (searchTerm == '') {
                 searchList.style.display = "none"
                 return
             }
@@ -294,9 +294,57 @@ search.addEventListener('input', () => {
             const filteredData = data.filter(el => el.title.toLowerCase().includes(searchTerm));
 
             if (filteredData.length > 0) {
-                const listItems = filteredData.map(el => `<li>${el.title}</li>`).join('');
+                const listItems = filteredData.map(el => `<li id="list-itm">${el.title}</li>`).join('');
                 searchList.innerHTML = listItems;
                 searchList.style.display = "flex"
+                const listItm = document.querySelectorAll('#list-itm')
+                listItm.forEach((itm) => {
+                    itm.addEventListener('click', () => {
+                        fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
+                        .then((res)=> res.json())
+                        .then((data)=> {
+                            data.forEach((el)=> {
+                                if(itm.textContent == el.title) {
+                                    console.log(el.category)
+                                    const sortProductsWrp = document.querySelector('.sort-products')
+                                    const sortCategory = document.querySelector('.sort-category')
+                                    const sortCloseBtn = document.querySelector('#sort-close')
+                                    sortProductsWrp.innerHTML = ''; 
+                                    fetch("https://raw.githubusercontent.com/javoxhr/data/main/data.json")
+                                    .then((sort)=> sort.json())
+                                    .then((sortData)=> {
+                                        sortData.forEach((sortItem)=> {
+                                            if(el.category == sortItem.category) {
+                                                let src = ''
+                                                sortItem.images.forEach((im) => {
+                                                    let img = `https://raw.githubusercontent.com/javoxhr/data/main/images/image_${im.id}.jpg`
+                                                    src = img
+                                                    return src
+                                                })
+                                                sortCloseBtn.addEventListener('click', ()=> {
+                                                  sortCategory.style.display = "none"
+                                                })
+                                                console.log(sortItem)
+                                                sortCategory.style.display = "block"
+                                                sortProductsWrp.innerHTML += `
+                                                <div class="sort-product">
+                                                 <img src="${src}" alt="">
+                                                 <div class="sort-product-text-wrp">
+                                                   <h2>${sortItem.title}</h2>
+                                                   <span>${sortItem.price} UZS</span>
+                                                   <span>${sortItem.location}</span>
+                                                   <button>Посмотреть</button>
+                                                 <div>
+                                                </div>
+                                                `
+                                            }
+                                        })
+                                    })
+                                }
+                            })
+                        })
+                    })
+                })
             } else {
                 searchList.innerHTML = '<li>Ничего не найдено</li>';
             }
